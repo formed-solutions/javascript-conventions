@@ -361,10 +361,10 @@ const name = 'christopher';
   
   // Good example.
   const address = {
-   city,
-   state,
-   street: 'market',
-   country: 'united states'
+    city,
+    state,
+    street: 'market',
+    country: 'united states'
   };
   ```
   
