@@ -236,6 +236,6 @@ const name = 'christopher';
     return 'Hi my name is ${name}.';
   }
   ```
-  - Use of `eval()` on a string is strictly prohibited.
+- Use of `eval()` on a string is strictly prohibited.
   
 [back to top](#top)
