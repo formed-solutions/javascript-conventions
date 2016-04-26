@@ -6,6 +6,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 1. [Spacing](#spacing)
 2. [Blocks](#blocks)
 3. [Semicolons](#semicolons)
+4. [Strings](#strings)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -151,11 +152,12 @@ This style guide aims to provide consistent conventions across all Formed produc
 [back to top](#top)
 
 ## 2. Blocks <a name="blocks"></a>
- - All multi-line blocks should use braces.
- ```javascript
- // Bad example.
- if (condition)
-   return true;
+
+- All multi-line blocks should use braces.
+  ```javascript
+  // Bad example.
+  if (condition)
+    return true;
   
   if (condition)
     return true;
@@ -169,7 +171,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 
   if (condition) return true;
   ```
-  - Multi-line blocks with `if` and `else` should have the `else` placed on a new line immmediately after the closing `if` brace.
+- Multi-line blocks with `if` and `else` should have the `else` placed on a new line immmediately after the closing `if` brace.
   ```javascript
   // Bad example.
   if (condition) {
@@ -186,25 +188,54 @@ This style guide aims to provide consistent conventions across all Formed produc
    return false;
   }
   ```
-  [back to top](#top)
+[back to top](#top)
   
-  ## 3. Semicolons <a name="semicolons"></a>
+## 3. Semicolons <a name="semicolons"></a>
   
-  Always use semicolons.  Don't rely on automatic Semicolon Insertion (ASI).
+Always use semicolons.  Don't rely on automatic Semicolon Insertion (ASI).
   
+```javascript
+// Bad examples.
+const name = 'christopher'
+  
+(function foo() {
+  return true
+}())
+  
+// Good examples.
+const name = 'christopher';
+  
+(function foo() {
+  return true;
+}());
+```
+[back to top](#top)
+  
+## 4. Strings <a name="strings"></a>
+  
+- Use single-quotes for string literals.
+- It is okay to use double quotes inside a string literal.
   ```javascript
-  // Bad examples.
-  const name = 'christopher'
-  
-  (function foo() {
-    return true
-  }())
-  
-  // Good examples.
-  const name = 'christopher';
-  
-  (function foo() {
-    return true;
-  }());
+  // Bad example.
+  const str = "lorem ipsum";
+    
+  // Good example.
+  const str = 'lorem ipsum';
+  const doubleQuote = 'lorem "ipsum"';
   ```
-  [back to top](#top)
+- Use string concantenation for strings that exceed max line length.
+- Always opt-in for template strings over concatentation when inserting dynamic values.
+  ```javascript
+  // Bad example.
+  function sayName(name) {
+    return 'Hi my name is ' + name '.';
+  }
+    
+  // Good example.
+  function sayName(name) {
+    return 'Hi my name is ${name}.';
+  }
+  ```
+  - Use of `eval()` on a string is strictly prohibited.
+  
+[back to top](#top)
