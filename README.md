@@ -2,8 +2,10 @@
 
 This style guide aims to provide consistent conventions across all Formed products and applications.
 
+## Table of Contents <a name="top"></a>
 1. [Spacing](#spacing)
 2. [Blocks](#blocks)
+3. [Semicolons](#semicolons)
 
 ## 1. <a name="whitespace">Spacing</a>
 
@@ -146,6 +148,7 @@ This style guide aims to provide consistent conventions across all Formed produc
   );
   ```
 - Leave one line of whitespace at end-of-file.
+[back to top](#top)
 
 ## 2. <a name="blocks">Blocks</a>
  - All multi-line blocks should use braces.
@@ -183,4 +186,25 @@ This style guide aims to provide consistent conventions across all Formed produc
    return false;
   }
   ```
+  [back to top](#top)
   
+  ## 3. <a name="#semicolons">Semicolons</a>
+  
+  Always use semicolons.  Don't rely on automatic Semicolon Insertion (ASI).
+  
+  ```javascript
+  // Bad examples.
+  const name = 'christopher'
+  
+  (function foo() {
+    return true
+  }())
+  
+  // Good examples.
+  const name = 'christopher';
+  
+  (function foo() {
+    return true;
+  }());
+  ```
+  [back to top](#top)
