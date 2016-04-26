@@ -7,7 +7,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 2. [Blocks](#blocks)
 3. [Semicolons](#semicolons)
 
-## 1. <a name="whitespace">Spacing</a>
+## 1. Spacing <a name="whitespace"></a>
 
 - Use spaces over tabs and two (2) spaces of indentation.
   ```javascript
@@ -150,7 +150,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 - Leave one line of whitespace at end-of-file.
 [back to top](#top)
 
-## 2. <a name="blocks">Blocks</a>
+## 2. Blocks <a name="blocks"></a>
  - All multi-line blocks should use braces.
  ```javascript
  // Bad example.
@@ -188,7 +188,7 @@ This style guide aims to provide consistent conventions across all Formed produc
   ```
   [back to top](#top)
   
-  ## 3. <a name="#semicolons">Semicolons</a>
+  ## 3. Semicolons <a name="semicolons"></a>
   
   Always use semicolons.  Don't rely on automatic Semicolon Insertion (ASI).
   
