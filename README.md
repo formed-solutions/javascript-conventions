@@ -10,6 +10,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 5. [Functions](#functions)
 6. [Objects](#objects)
 7. [Arrays](#arrays)
+8. [Classes & Constructors](#constructors)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -392,3 +393,77 @@ const name = 'christopher';
   ```
 
 [back to top](#top)
+
+## 8. Classes & Constructors <a name="constructors"><a/>
+
+- When available opt for `class` over existing prototype-based inheritance.
+  ```javascript
+  // Bad example.
+  function Shape(size) {
+    this.size = size;
+  };
+  
+  Shape.prototype.getSize = function () {
+    return this.size;
+  };
+  
+  // Good example.
+  class Shape {
+    constructor(size) {
+      this.size = size;
+    }
+    
+    getSize() {
+      return this.size;
+    }
+  }
+  ```
+- Sub classing (or inheritance) should be executed with `extends`.
+  ```javascript
+  // Good example.
+  class Square extends Shape {
+    setSize(size) {
+      this.size = size;
+      return this;
+    }
+  }
+  ```
+- Always return `this` for methods that don't directly return a value for method chaining.
+  ```javascript
+  // Bad example
+  class Shape {
+    constructor(size) {
+      this.size = size;
+    }
+    
+    getSize() {
+      return this.size;
+    }
+    
+    setSize(size) {
+      this.size = size;
+    }
+  }
+  
+  // Good example.
+  class Shape {
+    constructor(size) {
+      this.size = size;
+    }
+    
+    getSize() {
+      return this.size;
+    }
+    
+    setSize(size) {
+      this.size = size;
+      return this;
+    }
+  }
+  
+  const square = new Shape(50);
+  
+  square
+    .setSize(100)
+    .getSize();
+ ```
