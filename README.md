@@ -294,6 +294,16 @@ const name = 'christopher';
   ```
 - Declaring functions in non-function blocks is prohibited. e.g `if`, `else`, `while`, etc.
 - Using the Function constructor to create a new function is prohibited.
+- Use the arrow function syntax to avoid creating anonymous function expressions.
+  ```javascript
+  // Bad example.
+  [1, 2, 3].map(function (num) {
+    return num * num;
+  });
+
+  // Good example.
+  [1, 2, 3].map(num => num * num);
+  ```
 
 [back to top](#top)
 
