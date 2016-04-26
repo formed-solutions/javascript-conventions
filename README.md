@@ -9,6 +9,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 4. [Strings](#strings)
 5. [Functions](#functions)
 6. [Objects](#objects)
+7. [Arrays](#arrays)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -298,7 +299,7 @@ const name = 'christopher';
 
 ## 6. Object <a name="objects"></a>
 
-- Object creation should be done using the literal syntx.
+- Creating objects should be done using the shorthand `{}` syntax.
   ```javascript
   // Bad example.
   const obj = new Object();
@@ -356,4 +357,27 @@ const name = 'christopher';
    country: 'united states'
   };
   ```
+[back to top](#top)
+
+## 7. Arrays <a name="arrays"></a>
+
+- Creating arrays should be done using the shorthand `[]` syntax.
+  ```javascript
+  // Bad example;
+  const arr = new Array();
+  
+  // Good example.
+  const arr = [];
+  ```
+- Use `Array.push` to add items to an array rather than direct assignment.
+  ```javascript
+  const arr = [];
+  
+  // Bad example.
+  arr[arr.length] = 'foobar';
+  
+  // Good example.
+  arr.push('foobar');
+  ```
+
 [back to top](#top)
