@@ -2,10 +2,10 @@
 
 This style guide aims to provide consistent conventions across all Formed products and applications.
 
-1. [Whitespace](#whitespace)
+1. [Spacing](#spacing)
 2. [Formatting & Syntax](#formatting)
 
-## 1. <a name="whitespace">Whitespace</a>
+## 1. <a name="whitespace">Spacing</a>
 
 - Use spaces over tabs and two (2) spaces of indentation.
   ```javascript
@@ -83,6 +83,67 @@ This style guide aims to provide consistent conventions across all Formed produc
   const arr = [];
   const obj = {};
   foo();
+  ```
+- **Object declarations** should span multiple lines with one propery per line.
+  - Exception: Object does not exceed the maximum line length of 80 characters.
+    - Single line object declaration needs to obey `{}` spacing rule.
+  ```javascript
+  // Bad multi-line declaration example.
+  const location = {
+    address: 'market street', city: 'philadelphia' };
+  
+  // Bad single line declaration example.
+  const name = {first: 'christopher'};
+  
+  // Good single line declaration example.
+  const name = { first: 'christopher' };
+    
+  // Good multi-line declaration example.
+  const location = {
+    address: 'maket street',
+    city: 'philadelphia'
+  };
+  ```
+- **Array declarations** should be single line; unless it exceeds the max line length.  Then seperate each item in array on separte line.
+  - `[]` Should have no space after opening `[` and no preceding space before `]`.
+  - Single line declarations should have one spacing after each item in array except for last item.
+  - Multi-line declarations should have closing `]` on its own line.
+  - Spacing rules for `,` apply here as well.
+  ```javascript
+  // Bad examples.
+  const numbers = [ 1, 2, 3 ];
+  const cities = ['atlanta','boston','los angeles','new york','philadelphia','san francisco'];
+  
+  // Good examples.
+  const numbers = [1, 2, 3];
+  const letters = [
+    'atlanta',
+    'boston',
+    'los angeles',
+    'new york',
+    'philadelphia',
+    'san francisco'
+  ];
+  ```
+- **Function calls** should single line unless it exceeds maximum line length, or it helps in readability.
+  - Should be no space immediately after opening `(` or preceding a closing `)`.
+  - All arguments should be preceded by a space; unless first argument.
+  ```javascript
+  // Bad examples.
+  fn(arg1,arg2,arg3);
+  fn(arg1 ,arg2 ,arg3);
+  
+  // Good Examples.
+  fn(arg1, arg2, arg3);
+  
+  fn(
+    function success() {
+      return 'successful';
+    },
+    function error() {
+      return 'error';
+    }
+  );
   ```
 - Leave one line of whitespace at end-of-file.
 
