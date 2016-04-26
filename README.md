@@ -3,7 +3,7 @@
 This style guide aims to provide consistent conventions across all Formed products and applications.
 
 1. [Spacing](#spacing)
-2. [Formatting & Syntax](#formatting)
+2. [Blocks](#blocks)
 
 ## 1. <a name="whitespace">Spacing</a>
 
@@ -147,5 +147,40 @@ This style guide aims to provide consistent conventions across all Formed produc
   ```
 - Leave one line of whitespace at end-of-file.
 
-## 2. <a name="formatting">Formatting & Syntax</a>
+## 2. <a name="blocks">Blocks</a>
+ - All multi-line blocks should use braces.
+ ```javascript
+ // Bad example.
+ if (condition)
+   return true;
+  
+  if (condition)
+    return true;
+  else
+    return false;
+  
+  // Good examples.
+  if (condition) {
+    return true;
+  }
 
+  if (condition) return true;
+  ```
+  - Multi-line blocks with `if` and `else` should have the `else` placed on a new line immmediately after the closing `if` brace.
+  ```javascript
+  // Bad example.
+  if (condition) {
+    return true;
+  } else {
+    return false;
+  }
+  
+  // Good example.
+  if (condition) {
+    return true;
+  }
+  else {
+   return false;
+  }
+  ```
+  
