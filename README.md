@@ -128,7 +128,7 @@ This style guide aims to provide consistent conventions across all Formed produc
     'san francisco'
   ];
   ```
-- **Function calls** should single line unless it exceeds maximum line length, or it helps in readability.
+- **Function calls** should be single line unless it exceeds maximum line length, or it helps in readability.
   - Should be no space immediately after opening `(` or preceding a closing `)`.
   - All arguments should be preceded by a space; unless first argument.
   ```javascript
