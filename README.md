@@ -7,6 +7,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 2. [Blocks](#blocks)
 3. [Semicolons](#semicolons)
 4. [Strings](#strings)
+5. [Functions](#functions)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -238,4 +239,58 @@ const name = 'christopher';
   ```
 - Use of `eval()` on a string is strictly prohibited.
   
+[back to top](#top)
+
+## 5. Functions <a name="functions"></a>
+
+- Prefer function declarations over function expresssions.
+  - Avoid creating anonymous functions.
+  ```javascript
+  // Bad example.
+  const fn = function () {
+  };
+  
+  const controller = {
+    get: function (req, res, next) {
+    },
+    
+    post: function (req, res, next) {
+    }
+  };
+  
+  // Good example.
+  const controller = {
+    get: function get(req, res, next) {
+    },
+    
+    post: function post(req, res, next) {
+    }
+  };
+
+  function fn() {
+  }
+  ```
+- Wrap immediatly invoked function expression in parentheses.
+  ```javascript
+  // Bad example.
+  (function () {
+  })();
+  
+  // Good example.
+  (function() {
+  }());
+  ```
+- Naming a parameter `arguments` is strictly prohibited.
+  ```javascript
+  // Bad example.
+  function bad(arguments) {
+  }
+  
+  // Good example.
+  function good(args) {
+  }
+  ```
+- Declaring functions in non-function blocks is prohibited. e.g `if`, `else`, `while`, etc.
+- Using the Function constructor to create a new function is prohibited.
+
 [back to top](#top)
