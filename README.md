@@ -8,6 +8,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 3. [Semicolons](#semicolons)
 4. [Strings](#strings)
 5. [Functions](#functions)
+6. [Objects](#objects)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -293,4 +294,66 @@ const name = 'christopher';
 - Declaring functions in non-function blocks is prohibited. e.g `if`, `else`, `while`, etc.
 - Using the Function constructor to create a new function is prohibited.
 
+[back to top](#top)
+
+## 6. Object <a name="objects"></a>
+
+- Object creation should be done using the literal syntx.
+  ```javascript
+  // Bad example.
+  const obj = new Object();
+  
+  // Good example.
+  const obj = {};
+  ```
+- Use object method shorthand (when available).
+  ```javascript
+  // Bad example.
+  const obj = {
+    myMethod: function () {}
+  };
+  
+  // Good example.
+  const obj = {
+    myMethod() {}
+  };
+  ```
+- Use property value shortand (when available).
+  ```javascript
+  const city = 'philadelphia';
+  const state = 'pennsylvania';
+
+  // Bad example.
+  const address = {
+    city: city,
+    state: state
+  };
+  
+  // Good example.
+  const address = {
+    city,
+    state
+  };
+  ```
+- Place shorthand properties at the beginning of object declaration.
+  ```javascript
+  const city = 'philadelphia';
+  const state = 'pennsylvania';
+  
+  // Bad example.
+  const address = {
+    street: 'market',
+    city,
+    state,
+    country: 'united states'
+  };
+  
+  // Good example.
+  const address = {
+   city,
+   state,
+   street: 'market',
+   country: 'united states'
+  };
+  ```
 [back to top](#top)
