@@ -13,6 +13,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 8. [Classes & Constructors](#constructors)
 9. [Variables](#variables)
 10. [Comparison Operators](#comparison)
+11. [Naming Conventions](#naming)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -572,5 +573,56 @@ const name = 'christopher';
 - Ternaries should be single line.
   - Use a multi-line ternary only when max line length will be exceeded.
   - Try to avoid nested ternaries.
+
+[back to top](#top)
+
+## 11. Naming Conventions <a name="naming"></a>
+
+- Use camelCase for objects, properties, instances, and function names.
+
+  ```javascript
+  // Bad example.
+  const first_name = 'christopher';
+  
+  // Good example.
+  const firstName = 'christopher';
+  ```
+- Use PascalCase for class or constructor names.
+  
+  ```javascript
+  // Bad example.
+  function shape(size) {
+    this.size = size;
+  }
+  
+  const square = new shape(50);
+  
+  // Good example.
+  class Shape {
+    constructor(size) {
+      this.size = size;
+    }
+  }
+  
+  const square = new Shape(50);
+  ```
+- All function expressions should be named with a double underscore `__` prepended and appended to name.
+- Prefer hard-binding over caching references to `this`.
+  ```javascript
+  // Bad example.
+  function foo() {
+    const self = this;
+    
+    return function () {
+      return self;
+    };
+  }
+  
+  // Good Example.
+  function foo() {
+    return () => this;
+  }
+  ```
+- If scenario requires to store a reference to `this`, assign to a `const` declaration named `self`.
 
 [back to top](#top)
