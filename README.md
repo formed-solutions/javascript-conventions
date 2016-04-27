@@ -12,7 +12,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 7. [Arrays](#arrays)
 8. [Classes & Constructors](#constructors)
 9. [Variables](#variables)
-10. [Comparison Operators)[#comparison]
+10. [Comparison Operators](#comparison)
 
 ## 1. Spacing <a name="whitespace"></a>
 
