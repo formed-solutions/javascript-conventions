@@ -419,6 +419,7 @@ const name = 'christopher';
   }
   ```
 - Sub classing (or inheritance) should be executed with `extends`.
+
   ```javascript
   // Good example.
   class Square extends Shape {
