@@ -11,6 +11,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 6. [Objects](#objects)
 7. [Arrays](#arrays)
 8. [Classes & Constructors](#constructors)
+9. [Variables](#variables)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -470,3 +471,53 @@ const name = 'christopher';
     .setSize(100)
     .getSize();
  ```
+[back to top](#top)
+
+## 9. Variables <a name="variables"></a>
+
+- Use `const` as opposed to `var` when declaring variables and variables are not reassigend.
+  > The **const declaration** creates a read-only reference to a value.  It does not mean the value it holds is immutable, just that the variable identifier cannot be reassigned. - MDN
+
+  ```javascript
+  // Bad example.
+  var foo = 'foo';
+  bar = 'bar';
+  
+  // Good example.
+  const foo = 'foo';
+  const bar = 'bar';
+  ```
+- Use `let` for block scoping and variable reassignment.
+  > The let statement declares a block scope local variable, optionally initializing it to a value. - MDN
+
+  ```javascript
+  // Bad example.
+  for (var i = 0; i < 10; i++) {}
+  
+  // Good exmpale.
+  for (let i = 0; i < 10; i++) {}
+  ```
+- Use one `const` and `let` declaration per line.
+
+  ```javascript
+  // Bad example.
+  const foo = 'foo',
+    bar = 'bar';
+   
+  // Good example.
+  const foo = 'foo';
+  const bar = 'bar';
+  ```
+- Sort `const`s and `let`s.
+
+  ```javascript
+  // Bad example.
+  const foo = 'foo';
+  let baz = 'baz';
+  const bar = 'bar';
+  
+  // Good example
+  const foo = 'foo';
+  const bar = 'bar';
+  let baz = 'baz';
+  ```
