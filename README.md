@@ -14,6 +14,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 9. [Variables](#variables)
 10. [Comparison Operators](#comparison)
 11. [Naming Conventions](#naming)
+12. [ECMAScript compatibility](#ecmascript)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -626,3 +627,7 @@ const name = 'christopher';
 - If scenario requires to store a reference to `this`, assign to a `const` declaration named `self`.
 
 [back to top](#top)
+
+## 12. ECMAScript compatibility <a name="ecmascript"></a>
+
+- Refer to [kangax's compatibility tables](http://kangax.github.io/compat-table/es5/) for available features.
