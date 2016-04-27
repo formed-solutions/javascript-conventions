@@ -15,6 +15,8 @@ This style guide aims to provide consistent conventions across all Formed produc
 10. [Comparison Operators](#comparison)
 11. [Naming Conventions](#naming)
 12. [ECMAScript compatibility](#ecmascript)
+13. [Credit & Attribution](#credit)
+14. [License](#license)
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -631,3 +633,19 @@ const name = 'christopher';
 ## 12. ECMAScript compatibility <a name="ecmascript"></a>
 
 - Refer to [kangax's compatibility tables](http://kangax.github.io/compat-table/es5/) for available features.
+
+## 13. Credit & Attribution <a name="credit"></a>
+
+The following resources were heavily influenced in the creation of this style guide:
+
+- [Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
+- [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
+- [jQuery JavaScript Style Guide](https://contribute.jquery.org/style-guide/js/#equality)
+
+[back to top](#top)
+
+## 14. License <a name="license"></a>
+
+- [license](https://github.com/formed-solutions/javascript-conventions/blob/master/LICENSE)
+
+[back to top](#top)
