@@ -12,6 +12,7 @@ This style guide aims to provide consistent conventions across all Formed produc
 7. [Arrays](#arrays)
 8. [Classes & Constructors](#constructors)
 9. [Variables](#variables)
+10. [Comparison Operators)[#comparison]
 
 ## 1. Spacing <a name="whitespace"></a>
 
@@ -521,3 +522,55 @@ const name = 'christopher';
   const bar = 'bar';
   let baz = 'baz';
   ```
+[back to top](#top)
+
+## 10. Comparison Operators <a name="comparison"></a>
+
+- Prefer`===` and `!==` over `==` and `!==`, unless the test requires loose type evaluation.
+
+  > The equality `==` and inequality `!==` operators will convert the operands if they are **not of the same type**.
+  
+  ```javascript
+  // Examples of equality.
+  3 == 3 // true
+  3 == '3' // true
+  
+  // Examples of strict equality.
+  3 === 3 // true
+  3 === '3' // false
+  ```
+- JavaScript has an inherent Boolean value, generally referred to as *truthy* or *falsy* values.
+
+  *Falsy values of JavaScript*
+
+  Value | Type
+  ------|-----
+  0 | Number
+  NaN (not a number | Number
+  '' (empty string) | String
+  false | Boolean
+  null | Object
+  undefined | Undefined
+
+- Don't over do it.
+
+  ```Javascript
+  // Evaluating on an empty string.
+  // Bad example.
+  if (string !== '') {}
+  
+  // Good example.
+  if (string)
+  
+  // Evaluating that an array has length.
+  // Bad example.
+  if (array.length > 0) {}
+  
+  // Good example.
+  if (array.length) {}
+  ```
+- Ternaries should be single line.
+  - Use a multi-line ternary only when max line length will be exceeded.
+  - Try to avoid nested ternaries.
+
+[back to top](#top)
