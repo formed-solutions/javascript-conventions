@@ -428,7 +428,9 @@ const name = 'christopher';
     }
   }
   ```
-- Always return `this` for methods that don't directly return a value for method chaining.
+- Always return `this` for methods that implicity return.
+  > Why? Will allow for method chaining.
+
   ```javascript
   // Bad example
   class Shape {
